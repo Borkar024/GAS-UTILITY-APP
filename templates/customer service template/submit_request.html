@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+
+
+
+{% block title %}
+<title>SUBMIT REQUEST</title>
+{% endblock %}
+
+
+{% block content %}
+<div class='container-fluid'>
+    <form method='post'>
+        {% csrf_token %}
+        {{form|crispy}}
+        <input type = 'SUBMIT' value='REQUEST' class = 'btn btn-outline-success'>
+        <input type = 'reset' value='RESEND' class = 'btn btn-outline-warning'>
+    </form>
+</div>
+{% endblock %}

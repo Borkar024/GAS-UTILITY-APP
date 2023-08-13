@@ -1,0 +1,45 @@
+ {% extends 'base.html' %}
+ {% load crispy_forms_tags %}
+
+
+
+
+{% block title %}
+<title> TRACT REQUEST</title>
+{% endblock %}
+
+
+{% block content %}
+
+<div class = 'container-fluid'>
+
+    <table class = 'table table-info'>
+        <thead>
+        <tr>
+            <th>customer_name</th>
+            <th>type</th>
+            <th>details</th>
+            <th>submitted at</th>
+            <th>resolve at</th>
+            <th>status</th>
+        <tr>
+        </thead>
+        <tbody>
+        {% for ele in service_requests %}
+            <tr>
+                <td>{{ele.customer_name}}</td>
+                <td>{{ele.type}}</td>
+                <td>{{ele.details}}</td>
+                <td>{{ele.submitted_at}}</td>
+                <td>{{ele.resolved_at}}</td>
+                <td>{{ele.status}}</td>
+
+            </tr>
+        {% endfor %}
+        </tbody>
+
+    </table>
+    </form>
+
+</div>
+{% endblock %}
